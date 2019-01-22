@@ -10,6 +10,12 @@
     cols="60" rows="5"></textarea>
   </div>
   <div>
+      <!-- hide the type=file button using css (because appearance of the file browse button not good)
+      instead of browse button show normal button, but when normal button click it will fire browse button click   -->
+      <button type="button" (click)="filePicker.click()" class="btn btn-primary">Pick Image</button>
+      <input type="file" #filePicker>
+  </div>
+  <div>
     <button type="submit" >Submit</button>
   </div>
 </form>
