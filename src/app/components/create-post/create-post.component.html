@@ -1,12 +1,13 @@
-<form (submit)="onSavePost(postForm)" #postForm="ngForm">
+<form [formGroup]="form" (submit)="onSavePost()" >
   <div>
-    <input type="text" name="enteredTitle" 
-    [ngModel]="post?.title" 
+    <input 
+    type="text" 
+    formControlName="enteredTitle" 
     placeholder={{titlePlceHolder}}>
   </div>
   <div>
-    <textarea name="enteredContent" 
-    [ngModel]="post?.content"
+    <textarea 
+    formControlName="enteredContent" 
     cols="60" rows="5"></textarea>
   </div>
   <div>
