@@ -3,6 +3,7 @@ import { PostService } from '../post.service';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Post } from '../post.model';
+import { mimeType } from "./mime-type.validator";
 
 @Component({
   selector: 'create-post',
@@ -31,7 +32,10 @@ export class CreatePostComponent implements OnInit {
       }),
       // 'image' is not bind to any html element
       // in reactive forms it's not necessary to bind with html form  
-      'image': new FormControl(null, {validators: [Validators.required]})
+      image: new FormControl(null, {
+        validators: [Validators.required],
+        asyncValidators: [mimeType]
+      })
     });
 
     //this should be a observable because url changing
