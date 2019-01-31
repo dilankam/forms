@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,6 +11,7 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { ListPostComponent } from './components/list-post/list-post.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import { HeaderComponent } from './components/header/header.component';
     CreatePostComponent,
     ListPostComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     NgbModule.forRoot()
   ],
