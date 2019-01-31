@@ -2,11 +2,10 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const mongooes= require("mongoose");
 
-
-
 const app = express();
 
 const postsRoutes = require('./router/posts');
+const userRoutes = require("./routes/user");
 
 mongooes.connect("mongodb://localhost/form")
 .then(()=>{
@@ -37,4 +36,6 @@ app.use((req,res,next)=>{
 
 
 app.use("/api/posts",postsRoutes);
+app.use("/api/user", userRoutes);
+
 module.exports = app;
