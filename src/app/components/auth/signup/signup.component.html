@@ -1,0 +1,12 @@
+<form (submit)="onSignUp(signUpForm)" #signUpForm="ngForm" *ngIf="!isLoading">
+  <div>
+    <input name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+    <label *ngIf="emailInput.invalid">Please enter a valid email.</label>
+  </div>
+  <div>
+    <input type="password" name="password" ngModel placeholder="Password" #passwordInput="ngModel" required>
+    <label *ngIf="passwordInput.invalid">Please enter a valid password.</label>
+  </div>
+  <button mat-raised-button color="accent" type="submit">Sign Up</button>
+</form>
+
