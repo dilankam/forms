@@ -4,8 +4,9 @@ const mongooes= require("mongoose");
 
 const app = express();
 
-const postsRoutes = require('./router/posts');
+const postsRoutes = require('./routes/posts');
 const userRoutes = require("./routes/user");
+
 
 mongooes.connect("mongodb://localhost/form")
 .then(()=>{
