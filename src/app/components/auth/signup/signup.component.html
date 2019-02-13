@@ -1,4 +1,4 @@
-<form (submit)="onSignUp(signUpForm)" #signUpForm="ngForm" *ngIf="!isLoading">
+<form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
   <div>
     <input name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
     <label *ngIf="emailInput.invalid">Please enter a valid email.</label>
