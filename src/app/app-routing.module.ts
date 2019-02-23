@@ -6,12 +6,13 @@ import { TestComponent } from './components/test/test.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { AuthGuard } from "./components/auth/auth.guard";
 
 // Our Array of Angular 2 Routes
 const appRoutes: Routes = [
   {path: '',component: HomeComponent},
-  {path: 'create',component: CreatePostComponent},
-  {path: 'edit/:postId',component: CreatePostComponent},
+  {path: 'create',component: CreatePostComponent, canActivate: [AuthGuard]},
+  {path: 'edit/:postId',component: CreatePostComponent, canActivate: [AuthGuard]},
   {path: 'test',component: TestComponent},
   {path: 'login',component: LoginComponent},
   {path: 'signup',component: SignupComponent},
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [],
     imports: [RouterModule.forRoot(appRoutes)],
-    providers: [],
+    providers: [AuthGuard],
     bootstrap: [],
     exports: [RouterModule]
   })
